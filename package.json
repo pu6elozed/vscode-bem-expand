@@ -2,7 +2,7 @@
     "name": "bem-expand",
     "displayName": "BEM Expand",
     "description": "You already write BEM with SCSS and enjoy using `&` for parent selector. But you also want to use it in your HTML/JSX.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "lukazakrajsek",
     "repository": {
         "type": "git",
