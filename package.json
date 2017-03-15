@@ -39,7 +39,7 @@
         "keybindings": [{
             "command": "extension.bemExpand",
             "key": "tab",
-            "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadonly && !editorTabMovesFocus"
+            "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorHasMultipleSelections && !editorHasSelection && !editorReadonly && !editorTabMovesFocus && !suggestWidgetVisible"
         }]
     },
     "scripts": {
