@@ -25,7 +25,7 @@ export function expand() {
 
     let className: string = null;
 
-    for (let i = 0; i < line; i++) {
+    for (let i = line; i > 0; i--) {
         let line = editor.document.lineAt(i);
 
         className = findClass(line.text);
