@@ -7,7 +7,7 @@ import { findClass, checkTree } from './find-class';
 declare var obTree: object;
 
 export function expand() {
-    var obTree = {};
+    var obTree = [];
     let editor = vscode.window.activeTextEditor;
 
     let langId = editor.document.languageId;
