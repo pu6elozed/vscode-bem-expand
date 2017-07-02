@@ -2,9 +2,12 @@
 
 import * as vscode from 'vscode';
 
-import { findClass } from './find-class';
+import { findClass, checkTree } from './find-class';
+
+declare var obTree: object;
 
 export function expand() {
+    var obTree = {};
     let editor = vscode.window.activeTextEditor;
 
     let langId = editor.document.languageId;
@@ -25,8 +28,12 @@ export function expand() {
 
     let className: string = null;
 
-    for (let i = line; i > 0; i--) {
+    for (let i = line - 1; i > 0; i--) {
         let line = editor.document.lineAt(i);
+
+        if (!checkTree(line.text, obTree, line)) {
+            continue;
+        }
 
         className = findClass(line.text);
 
