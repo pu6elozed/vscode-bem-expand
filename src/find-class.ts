@@ -31,24 +31,24 @@ function isClosed(text): any {
         unclosed: false,
         opened: false,
     };
-    let match_closed = text.match(/<(\w+) .*>.*<\/(\w+)>/),
-        match_unclosed = text.match(/<\w+ .*\/>$/),
-        match_close = text.match(/[\s*]<\/(\w+)>$/),
-        match_opened = text.match(/<(\w+) .*>[[\w-_]*]?$/);
-    if (match_unclosed != null) {
-        obReturn.unclosed = match_unclosed.slice(1);
+    let matchClosed = text.match(/<(\w+) .*>.*<\/(\w+)>/),
+        matchUnclosed = text.match(/<\w+ .*\/>$/),
+        matchClose = text.match(/[\s*]<\/(\w+)>$/),
+        matchOpened = text.match(/<(\w+) .*>[[\w-_]*]?$/);
+    if (matchUnclosed != null) {
+        obReturn.unclosed = matchUnclosed.slice(1);
         return obReturn;
     }
-    if (match_close != null) {
-        obReturn.closed = match_close.slice(1);
+    if (matchClose != null) {
+        obReturn.closed = matchClose.slice(1);
         return obReturn;
     }
-    if (match_closed != null) {
+    if (matchClosed != null) {
         obReturn.closed = true;
         return obReturn;
     }
-    if (match_opened != null) {
-        obReturn.opened = match_opened.slice(1);
+    if (matchOpened != null) {
+        obReturn.opened = matchOpened.slice(1);
         return obReturn;
     }
     return obReturn;
