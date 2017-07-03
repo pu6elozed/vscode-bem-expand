@@ -8,16 +8,16 @@ export function findClass(text): string | null {
     return null;
 }
 
-export function checkTree(text, obTree, line): boolean {
-    let isClosed = is_closed(text);
-    if (typeof isClosed.closed != "boolean") {
-        obTree[obTree.length] = isClosed.closed.slice(0)[0];
+export function checkTree(text, obTree): boolean {
+    let isClosedVar = isClosed(text);
+    if (typeof isClosedVar.closed != "boolean") {
+        obTree[obTree.length] = isClosedVar.closed.slice(0)[0];
     }
-    if (typeof isClosed.opened != "boolean") {
+    if (typeof isClosedVar.opened != "boolean") {
         if (obTree.length == 0) {
             return true;
         }
-        if (obTree.slice(-1)[0] == isClosed.opened.slice()[0]) {
+        if (obTree.slice(-1)[0] == isClosedVar.opened.slice()[0]) {
             obTree.shift();
         }
     }
@@ -25,7 +25,7 @@ export function checkTree(text, obTree, line): boolean {
     return false;
 }
 
-function is_closed(text): any {
+function isClosed(text): any {
     let obReturn = {
         closed: false,
         unclosed: false,

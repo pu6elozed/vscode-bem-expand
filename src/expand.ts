@@ -28,10 +28,10 @@ export function expand() {
 
     let className: string = null;
 
-    for (let i = line - 1; i > 0; i--) {
+    for (let i = line; i >= 0; i--) {
         let line = editor.document.lineAt(i);
 
-        if (!checkTree(line.text, obTree, line)) {
+        if (!checkTree(line.text, obTree)) {
             continue;
         }
 
